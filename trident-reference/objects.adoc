@@ -35,7 +35,7 @@ TIP: Kubernetes オブジェクトの詳細については、を参照するこ�
 
 
 
-== Kubernetes PersistentVolumeClaim オブジェクト
+== Kubernetes `PersistentVolumeClaim` オブジェクト
 
 Kubernetesを `PersistentVolumeClaim` オブジェクトは、Kubernetesクラスタユーザが作成するストレージの要求です。
 
@@ -97,7 +97,7 @@ NOTE: を使用できます `cloneFromPVC` および `splitOnClone` CSI Trident�
 
 
 
-== Kubernetes PersistentVolume オブジェクト
+== Kubernetes `PersistentVolume` オブジェクト
 
 Kubernetesを `PersistentVolume` オブジェクトは、Kubernetesクラスタで使用可能になるストレージを表します。ポッドに依存しないライフサイクルがあります。
 
@@ -112,7 +112,7 @@ Tridentベースを参照するPVCを作成する場合 `StorageClass`Tridentは
 
 
 
-== Kubernetes StorageClass オブジェクト
+== Kubernetes `StorageClass` オブジェクト
 
 Kubernetes `StorageClass` オブジェクトは、の名前で指定します `PersistentVolumeClaims` 一連のプロパティを指定してストレージをプロビジョニングします。ストレージクラス自体が、使用するプロビジョニングツールを特定し、プロビジョニングツールが理解できる一連のプロパティを定義します。
 
@@ -219,7 +219,7 @@ Tridentのインストーラバンドルには、でTridentで使用するスト
 
 
 
-== Kubernetes VolumeSnapshotClass オブジェクト
+== Kubernetes `VolumeSnapshotClass` オブジェクト
 
 Kubernetes `VolumeSnapshotClass` オブジェクトはに似ています `StorageClasses`。この Snapshot コピーは、複数のストレージクラスの定義に役立ちます。また、ボリューム Snapshot によって参照され、 Snapshot を必要な Snapshot クラスに関連付けます。各ボリューム Snapshot は、単一のボリューム Snapshot クラスに関連付けられます。
 
@@ -238,7 +238,7 @@ deletionPolicy: Delete
 
 
 
-== Kubernetes VolumeSnapshot オブジェクト
+== Kubernetes `VolumeSnapshot` オブジェクト
 
 Kubernetesを `VolumeSnapshot` objectは、ボリュームのSnapshotを作成する要求です。PVC がボリュームに対するユーザからの要求を表すのと同様に、ボリュームスナップショットは、ユーザが既存の PVC のスナップショットを作成する要求です。
 
@@ -250,7 +250,7 @@ NOTE: VolumeSnapshot のライフサイクルはソース PVC とは無関係で
 
 
 
-== Kubernetes VolumeSnapshotContent オブジェクト
+== Kubernetes `VolumeSnapshotContent` オブジェクト
 
 Kubernetesを `VolumeSnapshotContent` オブジェクトは、すでにプロビジョニングされているボリュームから作成されたSnapshotを表します。これはに似ています `PersistentVolume` とは、ストレージクラスタにプロビジョニングされたSnapshotを表します。に似ています `PersistentVolumeClaim` および `PersistentVolume` オブジェクト。スナップショットが作成されると、が表示されます `VolumeSnapshotContent` オブジェクトは、への1対1のマッピングを保持します `VolumeSnapshot` オブジェクト。オブジェクトはSnapshotの作成を要求しました。
 
@@ -263,7 +263,7 @@ Trident では、スナップショット要求を受信すると、バックエ
 
 
 
-== Kubernetes CustomResourceDefinition オブジェクト
+== Kubernetes `CustomResourceDefinition` オブジェクト
 
 Kubernetes カスタムリソースは、管理者が定義した Kubernetes API 内のエンドポイントであり、類似するオブジェクトのグループ化に使用されます。Kubernetes では、オブジェクトのコレクションを格納するためのカスタムリソースの作成をサポートしています。を実行すると、これらのリソース定義を取得できます `kubectl get crds`。
 
@@ -282,7 +282,7 @@ Trident の CRD については、次の点に注意してください。
 
 
 
-== Trident StorageClass オブジェクト
+== Trident `StorageClass` オブジェクト
 
 TridentではKubernetesに対応するストレージクラスが作成されます `StorageClass` を指定するオブジェクト `csi.trident.netapp.io`/`netapp.io/trident` プロビジョニング担当者のフィールドに入力します。ストレージクラス名がKubernetesの名前と一致していること `StorageClass` 表すオブジェクト。
 
@@ -306,7 +306,7 @@ NOTE: これは、自分で作成および管理する 2 つのオブジェク�
 
 
 
-== Trident StoragePool オブジェクト
+== Trident `StoragePool` オブジェクト
 
 ストレージプールは、各バックエンドでのプロビジョニングに使用できる個別の場所を表します。ONTAP の場合、これらは SVM 内のアグリゲートに対応します。NetApp HCI / SolidFire では、管理者が指定した QoS 帯域に対応します。Cloud Volumes Service の場合、これらはクラウドプロバイダのリージョンに対応します。各ストレージプールには、パフォーマンス特性とデータ保護特性を定義するストレージ属性があります。
 
@@ -314,7 +314,7 @@ NOTE: これは、自分で作成および管理する 2 つのオブジェク�
 
 
 
-== Trident Volume オブジェクト
+== Trident `Volume` オブジェクト
 
 ボリュームは、 NFS 共有や iSCSI LUN などのバックエンドエンドエンドエンドポイントで構成される、プロビジョニングの基本単位です。Kubernetesでは、これらはに直接対応します `PersistentVolumes`。ボリュームを作成するときは、そのボリュームにストレージクラスが含まれていることを確認します。このクラスによって、ボリュームをプロビジョニングできる場所とサイズが決まります。
 
@@ -381,7 +381,7 @@ Tridentが生成 `internalName` ボリュームを作成する場合。この構
 
 
 
-== Trident Snapshot オブジェクト
+== Trident `Snapshot` オブジェクト
 
 Snapshot はボリュームのポイントインタイムコピーで、新しいボリュームのプロビジョニングやリストア状態に使用できます。Kubernetesでは、これらはに直接対応します `VolumeSnapshotContent` オブジェクト。各 Snapshot には、 Snapshot のデータのソースであるボリュームが関連付けられます。
 
