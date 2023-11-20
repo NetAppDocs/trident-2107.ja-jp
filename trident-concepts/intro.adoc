@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-concepts/intro.html 
 keywords: product overview, astra trident 
-summary: Trident の Astra プロビジョニングの主なフェーズは 2 つあります。最初のフェーズでは、ストレージクラスを適切なバックエンドストレージプールのセットに関連付け、プロビジョニング前の必要な準備として実行します。2 番目のフェーズでは、ボリュームの作成自体が行われます。このフェーズでは、保留中のボリュームのストレージクラスに関連付けられたストレージプールからストレージプールを選択する必要があります。 
+summary: Trident の Astra プロビジョニングの主なフェーズは 2 つあります。最初のフェーズでは、ストレージクラスを適切なバックエンドストレージプールのセットに関連付け、プロビジョニング前の必要な準備として実行します。2番目のフェーズではボリュームの作成自体が行われ、保留状態のボリュームのストレージクラスに関連付けられたストレージプールの中からストレージプールを選択する必要があります。 
 ---
 = Astra Trident の概要
 :hardbreaks:
@@ -11,9 +11,10 @@ summary: Trident の Astra プロビジョニングの主なフェーズは 2 �
 :imagesdir: ../media/
 
 
-Astra Trident は、ネットアップが管理している、完全にサポートされているオープンソースプロジェクトです。Container Storage Interface （ CSI ）などの業界標準インターフェイスを使用して、コンテナ化されたアプリケーションの永続性に対する要求を満たすように設計されています。
+[role="lead"]
+Astra Tridentは、NetAppが link:https://docs.netapp.com/us-en/astra-family/intro-family.html["Astra 製品ファミリー"^]。Container Storage Interface（CSI）などの業界標準のインターフェイスを使用して、コンテナ化されたアプリケーションの永続性要求を満たすように設計されています。
 
-Kubernetes クラスタにポッドとして Trident を導入し、 Kubernetes ワークロードに動的なストレージオーケストレーションサービスを提供コンテナ化されたアプリケーションは、 ONTAP （ AFF / FAS / Select / Cloud / Amazon FSX for NetApp ONTAP ）、 Element ソフトウェア（ NetApp HCI / SolidFire ）、 Azure NetApp Files サービス、 Cloud Volumes Service on Google Cloud 、 Cloud Volumes Service on AWS など、ネットアップの幅広いポートフォリオの永続的ストレージをすばやく簡単に消費できます。
+Kubernetes クラスタにポッドとして Trident を導入し、 Kubernetes ワークロードに動的なストレージオーケストレーションサービスを提供ONTAP（AFF/FAS/Select/Cloud/Amazon FSx for NetApp ONTAP）、Elementソフトウェア（NetApp HCI/SolidFire）、Azure NetApp Filesサービス、Cloud Volumes Service on Google Cloud、Cloud Volumes Service on AWSなど、ネットアップの幅広いポートフォリオが提供する永続的ストレージを、コンテナ化したアプリケーションですばやく簡単に利用できます。
 
 Astra Trident は、 NetApp の Astra の基盤テクノロジでもあり、 NetApp のスナップショット、バックアップ、レプリケーション、クローニングに業界をリードするデータ管理テクノロジを活用して、 Kubernetes ワークロードのデータ保護、ディザスタリカバリ、ポータビリティ、移行のユースケースに対応します。
 
